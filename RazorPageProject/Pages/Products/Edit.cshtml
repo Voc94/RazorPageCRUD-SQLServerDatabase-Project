@@ -1,0 +1,39 @@
+﻿@page
+@model RazorPageProject.Pages.Products.EditModel
+@{
+	ViewData["Title"] = "Edit";
+}
+<h3>@ViewData["Title"]</h3>
+<hr />
+<div class = "row shadow">
+	<div class = "col-md-4">
+		<form method="post">
+			<input type = "hidden" asp-for="Products.Id"/>
+			<div class = "form-group">
+				<label asp-for="Products.ProductName" class="control-label"></label>
+				<input asp-for="Products.ProductName" class="form-control" />
+				<span asp-validation-for="Products.ProductName" class="text-danger"></span>
+			</div>
+			<div class = "form-group">
+				<label asp-for="Products.Price" class="control-label"></label>
+				<input type="number" asp-for="Products.Price" class="form-control" />
+				<span asp-validation-for="Products.Price" class="text-danger"></span>
+			</div>
+			<div class = "form-group">
+				<label asp-for="Products.Qty" class="control-label"></label>
+				<input type="number" asp-for="Products.Qty" class="form-control" />
+				<span asp-validation-for="Products.Qty" class="text-danger"></span>
+			</div>
+			<div class="form-group mt-2">
+				<input type="submit" value = "Edit" class = "btn btn-primary" />
+				<a class = "btn btn-success" asp-page="Index">Product List</a>
+
+			</div>
+		</form>
+	</div>
+</div>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

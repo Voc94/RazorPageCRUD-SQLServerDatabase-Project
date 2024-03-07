@@ -10,7 +10,7 @@
 	<a asp-page="Create" class="btn btn-primary">Create</a>
 </p>
 <table class="table table-success table-striped table-responsive table-hover">
-	<thead>
+	<thead class = "table-dark">
 		<tr>
 			<th>
 				@Html.DisplayNameFor(model=> model.Products[0].Id)
@@ -48,9 +48,9 @@
 						@Html.DisplayFor(item => product.Qty)
 							</td>
 							<td>
-								<a asp-page="./Edit" asp-route-itemid="@product.Id" class="btn btn-primary">Edit</a>
-								<a asp-page="./Details" asp-route-itemid="@product.Id" class="btn btn-success">Details</a>
-								<a asp-page="./Delete" asp-route-itemid="@product.Id" class="btn btn-danger">Delete</a>
+								<a asp-page="./Edit" asp-route-id="@product.Id" class="btn btn-primary">Edit</a>
+								<a asp-page="./Details" asp-route-id="@product.Id" class="btn btn-success">Details</a>
+								<a asp-page="./Delete" asp-route-id="@product.Id" class="btn btn-danger">Delete</a>
 
 							</td>
 				</tr>

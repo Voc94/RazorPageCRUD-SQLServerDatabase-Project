@@ -11,7 +11,7 @@ using RazorPageProject.DAL;
 namespace RazorPageProject.Migrations
 {
     [DbContext(typeof(MyAppDbContext))]
-    [Migration("20240307114325_initial")]
+    [Migration("20240307134051_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -31,9 +31,6 @@ namespace RazorPageProject.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("int");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");

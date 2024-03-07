@@ -7,7 +7,6 @@ namespace RazorPageProject.Models
     {
         [Key]
         public int Id { get; set; }
-        public int MyProperty { get; set; }
         [Required]
         [DisplayName("Product Name")]
         public string ProductName {  get; set; }
