@@ -1,0 +1,68 @@
+﻿@page
+@model RazorPageProject.Pages.Products.IndexModel
+@{
+	ViewData["Title"] = "Product List";
+}
+
+<h3>@ViewData["Title"]</h3>
+<hr />
+<p>
+	<a asp-page="Create" class="btn btn-primary">Create</a>
+</p>
+<table class="table table-success table-striped table-responsive table-hover">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model=> model.Products[0].Id)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Products[0].ProductName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Products[0].Price)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Products[0].Qty)
+			</th>
+			<th>
+				Action
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model != null && Model.Products.Any())
+		{
+			@foreach(var product in Model.Products)
+			{
+				<tr>
+							<td>
+						@Html.DisplayFor(item => product.Id)
+							</td>
+							<td>
+						@Html.DisplayFor(item => product.ProductName)
+							</td>
+							<td>
+						@Html.DisplayFor(item => product.Price)
+							</td>
+							<td>
+						@Html.DisplayFor(item => product.Qty)
+							</td>
+							<td>
+								<a asp-page="./Edit" asp-route-itemid="@product.Id" class="btn btn-primary">Edit</a>
+								<a asp-page="./Details" asp-route-itemid="@product.Id" class="btn btn-success">Details</a>
+								<a asp-page="./Delete" asp-route-itemid="@product.Id" class="btn btn-danger">Delete</a>
+
+							</td>
+				</tr>
+			}
+		}
+		else
+		{
+			<tr>
+				<td colspan="5" class="text-center">
+					Product not available at this moment!
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
