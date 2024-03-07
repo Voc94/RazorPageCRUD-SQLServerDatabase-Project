@@ -10,9 +10,9 @@
     <div class="col-md-4">
         <form method="post">
             <input type="hidden" asp-for="Products.Id" />
-            <div class="form-group border border-dark">
-                <label asp-for="Products.ProductName" class="control-label d-flex justify-content-center"></label>
-                <p class="form-control-static d-flex justify-content-center">@Model.Products.ProductName</p>
+            <div class="form-group border border-dark pb-5">
+                <label asp-for="Products.ProductName" class="control-label d-flex justify-content-center align-items-center"></label>
+                <p class="form-control-static d-flex justify-content-center align-items-center">@Model.Products.ProductName</p>
             </div>
             <button type="submit" class="btn btn-danger">Delete</button>
             <span class="alert-warning border border-warning"  >Are you sure you want to delete this?</span>
